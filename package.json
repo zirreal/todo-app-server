@@ -1,0 +1,15 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "todo app demo",
+  "main": "main.js",
+  "scripts": {
+    "start":  "node server.js"
+  },
+  "author": "zirreal",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.5.1",
+    "serve": "^13.0.2"
+  }
+}
