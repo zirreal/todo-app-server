@@ -1,10 +1,10 @@
 export const getTodoList = async (owner) => {
-    const response = await fetch(`https://todo-app-dfc31g5.herokuapp.com/api/todos?owner=${owner}`);
+    const response = await fetch(`https://zirreal-todo-server.herokuapp.com/api/todos?owner=${owner}`);
     return await response.json();
 };
 
 export const createTodoItem = async ({owner, name}) => {
-    const response = await fetch("https://todo-app-dfc31g5.herokuapp.com/api/todos", {
+    const response = await fetch("https://zirreal-todo-server.herokuapp.com/api/todos", {
         method: "POST",
         body: JSON.stringify({
           name,
@@ -19,7 +19,7 @@ export const createTodoItem = async ({owner, name}) => {
 
 export const switchTodoItemDone = ({todoItem}) => {
     todoItem.done = !todoItem.done;
-    fetch(`https://todo-app-dfc31g5.herokuapp.com/api/todos/${todoItem.id}`, {
+    fetch(`https://zirreal-todo-server.herokuapp.com/api/todos/${todoItem.id}`, {
         method: 'PATCH',
         body: JSON.stringify({done: todoItem.done}),
         headers: {
@@ -33,7 +33,7 @@ export const deleteTodoItem = ({element, todoItem}) => {
         return;
     }
     element.remove();
-    fetch(`https://todo-app-dfc31g5.herokuapp.com/api/todos/${todoItem.id}`, {
+    fetch(`https://zirreal-todo-server.herokuapp.com/api/todos/${todoItem.id}`, {
         method: 'DELETE',
     });
 };
